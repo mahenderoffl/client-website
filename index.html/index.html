@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Natural View Photography</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
+<script>tailwind.config={theme:{extend:{colors:{primary:'#CA71DC',secondary:'#1E3A8A'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+.about-slider {
+position: relative;
+height: 400px;
+}
+.about-slide {
+opacity: 0;
+transition: opacity 0.5s ease-in-out;
+}
+.about-slide.active {
+opacity: 1;
+}
+.hero-section {
+position: relative;
+overflow: hidden;
+}
+.hero-slide {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: opacity 1s ease-in-out;
+background-size: cover;
+background-position: center;
+}
+.hero-slide.active {
+opacity: 1;
+}
+.slide-1 {
+background-image: url('https://lh5.googleusercontent.com/p/AF1QipOSNDHQGEUJwHyZGkR7hcc8ljeLQ6glbtl6krTB=s453-k-no');
+}
+.slide-2 {
+background-image: url('https://lh5.googleusercontent.com/p/AF1QipM7VGkFr5m-DjYW8dfbqkep-ZSuDBK9mxPk3gbx=s846-k-no');
+}
+.slide-3 {
+background-image: url('https://lh5.googleusercontent.com/p/AF1QipNlih0haT-BFK_JsThT60aRzbo2bTqwETwZWebO=s544-k-no');
+}
+.testimonial-card {
+background-image: url('https://public.readdy.ai/ai/img_res/d8ce43ef655c19e850fc0cc7316a7dce.jpg');
+background-size: cover;
+}
+.testimonials-slider {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+.testimonial-dot {
+transition: background-color 0.3s ease-in-out;
+}
+.image-slider {
+display: flex;
+transition: transform 0.5s ease-in-out;
+}
+.image-dot {
+transition: background-color 0.3s ease-in-out;
+}
+</style>
+</head>
+<body class="bg-white">
+<nav class="fixed w-full bg-white/90 backdrop-blur-sm z-50 border-b border-gray-100">
+<div class="container mx-auto px-6 py-4">
+<div class="flex items-center justify-between">
+<a href="#" class="text-2xl font-['Pacifico'] text-black">Natural View Photography</a>
+<div class="hidden md:flex items-center space-x-8">
+<a href="#" class="text-gray-700 hover:text-primary">Home</a>
+<a href="#about" class="text-gray-700 hover:text-primary">About</a>
+<a href="#portfolio" class="text-gray-700 hover:text-primary">Portfolio</a>
+<a href="#services" class="text-gray-700 hover:text-primary">Services</a>
+<a href="#founders" class="text-gray-700 hover:text-primary">Founders</a>
+<a href="#contact" class="text-gray-700 hover:text-primary">Contact</a>
+</div>
+<div class="flex items-center space-x-4">
+<a href="https://www.instagram.com/naturalviewphotography_studios" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary">
+<i class="ri-instagram-line text-xl"></i>
+</a>
+<a href="https://www.facebook.com/Naturalview7999/" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary">
+<i class="ri-facebook-fill text-xl"></i>
+</a>
+<a href="https://www.youtube.com/@NaturalviewPhotography" target="_blank" class="w-10 h-10 flex items-center justify-center text-gray-700 hover:text-primary">
+<i class="ri-youtube-fill text-xl"></i>
+</a>
+<a href="tel:+919885059969" class="hidden md:flex items-center space-x-2 text-green-500 hover:text-green-600 transition-colors">
+<i class="ri-phone-line"></i>
+<span>+91 9885059969</span>
+</a>
+</div>
+</div>
+</div>
+</nav>
+<section class="hero-section h-screen flex items-center justify-center text-white">
+<div class="hero-slide slide-1 active"></div>
+<div class="hero-slide slide-2"></div>
+<div class="hero-slide slide-3"></div>
+<div class="container mx-auto px-6 text-center relative z-10 flex flex-col items-center">
+<h1 class="text-5xl md:text-7xl font-bold mb-6 text-white bg-red-600 inline-block px-4 py-2 rounded-lg">Capturing Your Perfect Moments</h1>
+<p class="text-xl mb-8 max-w-2xl mx-auto text-white bg-blue-600 inline-block px-4 py-2 rounded-lg">Professional wedding and event photography services in Telangana and Andhra Pradesh</p>
+<a href="tel:+919885059969" class="bg-primary text-white px-8 py-3 !rounded-button hover:bg-primary/90 transition inline-block mt-4">Call Now</a>
+</div>
+</section>
+<section id="about" class="py-20 bg-blue-50">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div class="relative overflow-hidden">
+<div class="about-slider">
+<img src="https://lh5.googleusercontent.com/p/AF1QipNAk6tJlm5CKIZ7S3i4YvyvO8n_MeNjOaZbQo5R=w372-h298-k-no" alt="Studio" class="about-slide rounded-lg shadow-lg w-full h-[400px] object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500">
+<img src="https://lh5.googleusercontent.com/p/AF1QipMH6jlTf4ZNuLPTEm6rC4PwMCTboxX6ODbBbS_Y=w195-h143-p-k-no" alt="Studio" class="about-slide rounded-lg shadow-lg w-full h-[400px] object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500"><img src="https://lh5.googleusercontent.com/p/AF1QipM7VGkFr5m-DjYW8dfbqkep-ZSuDBK9mxPk3gbx=w203-h299-k-no" alt="Studio" class="about-slide rounded-lg shadow-lg w-full h-[400px] object-cover absolute top-0 left-0 opacity-0 transition-opacity duration-500">
+</div>
+</div>
+<div>
+<h2 class="text-4xl font-bold mb-6">About Us</h2>
+<p class="text-gray-600 mb-6">Natural View Photography is a premier photography studio specializing in wedding and event photography across Telangana and Andhra Pradesh. With years of experience, we've mastered the art of capturing life's most precious moments.</p>
+<p class="text-gray-600 mb-6">Our team of professional photographers combines technical expertise with artistic vision to create stunning visual narratives that tell your unique story.</p>
+<div class="grid grid-cols-2 gap-6">
+<div class="text-center p-4 bg-white rounded-lg shadow hover:bg-blue-50 transition-colors duration-300">
+<h3 class="text-3xl font-bold text-primary mb-2">500+</h3>
+<p class="text-gray-600">Weddings Covered</p>
+</div>
+<div class="text-center p-4 bg-white rounded-lg shadow hover:bg-blue-50 transition-colors duration-300">
+<h3 class="text-3xl font-bold text-primary mb-2">5000+</h3>
+<p class="text-gray-600">Happy Clients</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="portfolio" class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Our Portfolio</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="relative group">
+<img src="https://lh5.googleusercontent.com/p/AF1QipOSNDHQGEUJwHyZGkR7hcc8ljeLQ6glbtl6krTB=s453-k-no" alt="Wedding" class="w-full h-[300px] object-cover rounded-lg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="text-white text-lg font-semibold">Wedding Photography</span>
+</div>
+</div>
+<div class="relative group">
+<img src="https://lh5.googleusercontent.com/p/AF1QipMH6jlTf4ZNuLPTEm6rC4PwMCTboxX6ODbBbS_Y=w195-h143-p-k-no" alt="Pre-wedding" class="w-full h-[300px] object-cover rounded-lg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="text-white text-lg font-semibold">Pre-wedding Shoots</span>
+</div>
+</div>
+<div class="relative group">
+<img src="https://lh5.googleusercontent.com/p/AF1QipMmka1goVWQvLFke8oF8V3p7pqRIgLtYhZArY2I=w203-h135-k-no" alt="Events" class="w-full h-[300px] object-cover rounded-lg">
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<span class="text-white text-lg font-semibold">Festival & Events</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="video-gallery" class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Video Gallery</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/8vmMn4i7ESY" title="Wedding Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/YQU-7y8mQaw" title="Pre-wedding Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/r49spxjGIwI" title="Event Coverage" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+<div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+<iframe class="w-full h-full" src="https://www.youtube.com/embed/lPTt_y3125o" title="Corporate Event" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+</div>
+</div>
+</section>
+<section id="image-gallery" class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Image Gallery</h2>
+<div class="relative overflow-hidden rounded-lg">
+<div class="flex transition-transform duration-500 image-slider">
+<img src="https://yt3.ggpht.com/3OHms7-ll-C1dVT1NiSwgcmooH8bRxuSOJusHD-_tFdSiRQGwbH_p_6SRpti1nHo0dKvu4BEKAAiDw=s1600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa" alt="Gallery Image 1" class="w-full h-[800px] object-cover shrink-0">
+<img src="https://yt3.ggpht.com/tuR8qe-uM3zvaqHCJsTa7nKHwtJzHF2W0NChjqnnpS8-zknuutiROBRuHfBqucrA11XtH3LFuBuKQg=s1600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa" alt="Gallery Image 2" class="w-full h-[800px] object-cover shrink-0">
+<img src="https://yt3.ggpht.com/kiLEQbrQ3KzBarkbu-OJmp1tMyilSk0WTZZ1hAVb8dfo1nA967MMhgQ38GRyZ2FzHdkhgvKJckHAZRg=s1600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa" alt="Gallery Image 3" class="w-full h-[800px] object-cover shrink-0">
+<img src="https://yt3.ggpht.com/qwWZQujCzjGfzEgNkq_hIQ8uBWWlZ-T2Me82Snukx1qNNouaaobxwX6ggqnnddDXB9eObUze4nQbVgk=s1600-c-fcrop64=1,00000000ffffffff-nd-v1-rwa" alt="Gallery Image 4" class="w-full h-[800px] object-cover shrink-0">
+<img src="https://yt3.ggpht.com/gIMgbnNZzi6lGAloFnJMXmiAeeIZLoitwtOTclqLHwmLxe_9P4yZjKRD08e4xaX3pvBBcOsWT7rSPg=s1600-c-fcrop64=1,00000000ffffffff-rw-nd-v1" alt="Gallery Image 5" class="w-full h-[800px] object-cover shrink-0">
+<img src="https://yt3.ggpht.com/mUv1nyFYQGjgfFGENOUjhT1DVoKRG5k-OtTyxCAGrgBtCuk7P0mgpDq1szucFS0mJz2wsskQs6jN=s1600-c-fcrop64=1,00000000ffffffff-rw-nd-v1" alt="Gallery Image 6" class="w-full h-[800px] object-cover shrink-0">
+</div>
+<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+<button class="w-3 h-3 rounded-full bg-gray-300 image-dot" data-index="0"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 image-dot" data-index="1"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 image-dot" data-index="2"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 image-dot" data-index="3"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 image-dot" data-index="4"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 image-dot" data-index="5"></button>
+</div>
+</div>
+</div>
+</section>
+<section id="services" class="py-20 bg-blue-50">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Our Services</h2>
+<div class="grid md:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300">
+<div class="w-12 h-12 flex items-center justify-center text-primary mb-4">
+<i class="ri-camera-3-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Wedding Photography</h3>
+<p class="text-gray-600">Comprehensive coverage of your special day with attention to every detail and emotion.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300">
+<div class="w-12 h-12 flex items-center justify-center text-primary mb-4">
+<i class="ri-image-2-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Pre-wedding Shoots</h3>
+<p class="text-gray-600">Creative and romantic photo sessions to capture your love story before the big day.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300">
+<div class="w-12 h-12 flex items-center justify-center text-primary mb-4">
+<i class="ri-movie-2-line text-2xl"></i>
+</div>
+<h3 class="text-xl font-bold mb-4">Event Coverage</h3>
+<p class="text-gray-600">Professional photography for corporate events, celebrations, and special occasions.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="testimonials" class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Client Testimonials</h2>
+<div class="relative overflow-hidden">
+<div class="testimonials-slider flex transition-transform duration-500 ease-in-out">
+<div class="testimonials-slide flex gap-8 w-full shrink-0">
+<div class="testimonial-card p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300 w-1/2">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-bold">Balaji G</h4>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Siddarth had delivered stunning pics and service which exceeded my expectations. Highly recommended for anyone willing to capture their best moments in life."</p>
+</div>
+<div class="testimonial-card p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300 w-1/2">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-bold">Leela Reddy</h4>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Thank you so much for the best photos! We have received best compliments from our family and friends. You have captured perfect moments 😍😍"</p>
+</div>
+</div>
+<div class="testimonials-slide flex gap-8 w-full shrink-0">
+<div class="testimonial-card p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300 w-1/2">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-bold">Sumanth Choudary</h4>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Photography is nothing but a creative aspect of an individual and Siddarth from Natural View Photography falls under this category. Seen his work from close quarters and I'm astonished with his creativity, simplicity and the vision he carries out. Very professional, genuine and hardworking guy with immense talent."</p>
+</div>
+<div class="testimonial-card p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300 w-1/2">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-bold">Sowmya Narayanraopet</h4>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Natural View Photography exceeded expectations, capturing every moment with artistic flair. The photographer (Siddharth) is incredible. The team's attention to detail and professional approach made our special day even more memorable."</p>
+</div>
+</div>
+<div class="testimonials-slide flex gap-8 w-full shrink-0">
+<div class="testimonial-card p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300 w-1/2">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-bold">Ramesh Kumar</h4>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Exceptional service! The team went above and beyond to capture every precious moment of our wedding. The photos turned out absolutely stunning. Their professionalism and creativity made our special day even more memorable."</p>
+</div>
+<div class="testimonial-card p-6 rounded-lg shadow-lg hover:bg-blue-50 transition-colors duration-300 w-1/2">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-line text-xl"></i>
+</div>
+<div class="ml-4">
+<h4 class="font-bold">Priya Sharma</h4>
+<div class="flex text-primary">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+</div>
+<p class="text-gray-600">"Working with Natural View Photography was an absolute pleasure. They have an amazing eye for detail and captured the essence of our pre-wedding shoot perfectly. The photos are a beautiful blend of creativity and emotion."</p>
+</div>
+</div>
+</div>
+<div class="flex justify-center mt-8 space-x-2">
+<button class="w-3 h-3 rounded-full bg-gray-300 testimonial-dot" data-index="0"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 testimonial-dot" data-index="1"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300 testimonial-dot" data-index="2"></button>
+</div>
+</div>
+</div>
+</section>
+<section id="founders" class="py-20">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Founder's Corner</h2>
+<div class="space-y-6 max-w-3xl mx-auto">
+<p class="text-gray-600 text-lg leading-relaxed">Naturalview Photography, led by Siddhartha Varma, is a premier photography studio based in Manikonda, Hyderabad. With over 15 years of expertise in candid photography and cinematic storytelling, Siddhartha has mastered the art of capturing life's most precious moments with authenticity and creativity.</p>
+<p class="text-gray-600 text-lg leading-relaxed">Under the leadership of Managing Director Anusha, Naturalview Photography delivers high-quality wedding, event, portrait, and commercial photography services, ensuring each frame tells a compelling story.</p><div class="flex items-center space-x-4 mt-8">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-camera-3-line text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold text-xl">Siddhartha Varma</h4>
+<p class="text-gray-600">Founder & Lead Photographer</p>
+</div>
+</div>
+<div class="flex items-center space-x-4 mt-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full">
+<i class="ri-user-3-line text-xl"></i>
+</div>
+<div>
+<h4 class="font-bold text-xl">Anusha</h4>
+<p class="text-gray-600">Managing Director</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="contact" class="py-20 bg-blue-50">
+<div class="container mx-auto px-6">
+<h2 class="text-4xl font-bold text-center mb-12">Contact Us</h2>
+<div class="grid md:grid-cols-2 gap-12">
+<div>
+<form class="space-y-6">
+<div>
+<label class="block text-gray-700 mb-2">Name</label>
+<input type="text" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:border-primary focus:ring-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2">Email</label>
+<input type="email" class="w-full px-4 py-2 rounded-lg border-gray-300 focus:border-primary focus:ring-primary" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2">Message</label>
+<textarea class="w-full px-4 py-2 rounded-lg border-gray-300 focus:border-primary focus:ring-primary" rows="4" required></textarea>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-2 !rounded-button hover:bg-primary/90 transition">Send Message</button>
+</form>
+</div>
+<div>
+<div class="bg-white p-6 rounded-lg shadow-lg mb-6">
+<h3 class="text-xl font-bold mb-4">Studio Address</h3>
+<p class="text-gray-600 mb-4">Rd Number 13, Sai Vaibhav Layout, Sai Aishwarya Layout, Chitrapuri Colony, Manikonda, Hyderabad, Telangana 500089</p>
+<div class="flex items-center text-primary mb-4">
+<i class="ri-phone-line mr-2"></i>
+<a href="tel:+919885059969">+91 9885059969</a>
+</div>
+<div class="flex items-center text-primary">
+<i class="ri-instagram-line mr-2"></i>
+<a href="https://www.instagram.com/naturalviewphotography_studios" target="_blank">Follow us on Instagram</a>
+</div>
+<div class="flex items-center text-primary mt-4">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:naturalviewphotography@gmail.com">naturalviewphotography@gmail.com</a>
+</div>
+</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3807.234584031386!2d78.4058!3d17.4058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI0JzIwLjkiTiA3OMKwMjQnMjAuOSJF!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-lg"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-secondary text-white py-12">
+<div class="container mx-auto px-6">
+<div class="grid md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-2xl font-['Pacifico'] mb-4">Natural View Photography</h3>
+<p class="text-gray-400">Capturing life's beautiful moments with passion and precision.</p>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+<li><a href="#about" class="text-gray-400 hover:text-white">About</a></li>
+<li><a href="#portfolio" class="text-gray-400 hover:text-white">Portfolio</a></li>
+<li><a href="#services" class="text-gray-400 hover:text-white">Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Services</h4>
+<ul class="space-y-2">
+<li><a href="#" class="text-gray-400 hover:text-white">Wedding Photography</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Pre-wedding Shoots</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Event Coverage</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white">Corporate Events</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-bold mb-4">Contact</h4>
+<ul class="space-y-2">
+<li class="flex items-center">
+<i class="ri-phone-line mr-2"></i>
+<a href="tel:+919885059969" class="text-gray-400 hover:text-white">+91 9885059969</a>
+</li>
+<li class="flex items-center">
+<i class="ri-instagram-line mr-2"></i>
+<a href="https://www.instagram.com/naturalviewphotography_studios" target="_blank" class="text-gray-400 hover:text-white">Instagram</a>
+</li>
+<li class="flex items-center">
+<i class="ri-facebook-fill mr-2"></i>
+<a href="https://www.facebook.com/Naturalview7999/" target="_blank" class="text-gray-400 hover:text-white">Facebook</a>
+</li>
+<li class="flex items-center">
+<i class="ri-youtube-fill mr-2"></i>
+<a href="https://www.youtube.com/@NaturalviewPhotography" target="_blank" class="text-gray-400 hover:text-white">YouTube</a>
+</li>
+<li class="flex items-center">
+<i class="ri-mail-line mr-2"></i>
+<a href="mailto:naturalviewphotography@gmail.com" class="text-gray-400 hover:text-white">naturalviewphotography@gmail.com</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+<p>&copy; 2025 Natural View Photography. All rights reserved.
+    Designed and Managed by Mahender (IIT Patna)
+    <a href="https://www.instagram.com/mahender_hustles?igsh=MWpqdnNvbm42M3g5dA==" target="_blank" class="text-white hover:text-primary ml-2">
+        <i class="ri-instagram-line"></i>
+    </a>
+</p>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const slides = document.querySelectorAll('.hero-slide');
+let currentSlide = 0;
+function nextSlide() {
+slides[currentSlide].classList.remove('active');
+currentSlide = (currentSlide + 1) % slides.length;
+slides[currentSlide].classList.add('active');
+}
+setInterval(nextSlide, 5000);
+const aboutSlides = document.querySelectorAll('.about-slide');
+let currentAboutSlide = 0;
+function nextAboutSlide() {
+aboutSlides[currentAboutSlide].classList.remove('active');
+currentAboutSlide = (currentAboutSlide + 1) % aboutSlides.length;
+aboutSlides[currentAboutSlide].classList.add('active');
+}
+setInterval(nextAboutSlide, 2000);
+aboutSlides[0].classList.add('active');
+const testimonialSlider = document.querySelector('.testimonials-slider');
+const testimonialDots = document.querySelectorAll('.testimonial-dot');
+let currentTestimonialSlide = 0;
+function updateTestimonialDots() {
+testimonialDots.forEach((dot, index) => {
+dot.classList.toggle('bg-primary', index === currentTestimonialSlide);
+dot.classList.toggle('bg-gray-300', index !== currentTestimonialSlide);
+});
+}
+function nextTestimonialSlide() {
+currentTestimonialSlide = (currentTestimonialSlide + 1) % 3;
+testimonialSlider.style.transform = `translateX(-${currentTestimonialSlide * 100}%)`;
+updateTestimonialDots();
+}
+testimonialDots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+currentTestimonialSlide = index;
+testimonialSlider.style.transform = `translateX(-${index * 100}%)`;
+updateTestimonialDots();
+});
+});
+setInterval(nextTestimonialSlide, 5000);
+updateTestimonialDots();
+const imageSlider = document.querySelector('.image-slider');
+const imageDots = document.querySelectorAll('.image-dot');
+let currentImageSlide = 0;
+function updateImageDots() {
+imageDots.forEach((dot, index) => {
+dot.classList.toggle('bg-primary', index === currentImageSlide);
+dot.classList.toggle('bg-gray-300', index !== currentImageSlide);
+});
+}
+function nextImageSlide() {
+currentImageSlide = (currentImageSlide + 1) % 6;
+imageSlider.style.transform = `translateX(-${currentImageSlide * 100}%)`;
+updateImageDots();
+}
+imageDots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+currentImageSlide = index;
+imageSlider.style.transform = `translateX(-${index * 100}%)`;
+updateImageDots();
+});
+});
+setInterval(nextImageSlide, 2500);
+updateImageDots();
+const form = document.querySelector('form');
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(form);
+const data = Object.fromEntries(formData);
+console.log('Form submitted:', data);
+const notification = document.createElement('div');
+notification.className = 'fixed top-4 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg transform transition-all duration-500 translate-y-[-100%]';
+notification.textContent = 'Message sent successfully!';
+document.body.appendChild(notification);
+setTimeout(() => {
+notification.style.transform = 'translateY(0)';
+}, 100);
+setTimeout(() => {
+notification.style.transform = 'translateY(-100%)';
+setTimeout(() => notification.remove(), 500);
+}, 3000);
+form.reset();
+});
+});
+</script>
+</body>
+</html>
